@@ -402,8 +402,11 @@ public class DepthFirstSearch extends HeuristicSearch {
 		System.out.println("\n# Total Nodes               = " + NODES);
 		System.out.println("# Number of Expansions      = "   + RECURSION_COUNTER);
 		System.out.println("# Number of Node Expansions = "   + NODE_EXPANSIONS);
-		System.out.println("# Policy Size               = "   + getPolicy().size());
-		
+
+		Policy policy = getPolicy();
+		if (policy != null)
+			System.out.println("# Policy Size               = "   + policy.size());
+
 		if (simulatePlan)
 			simulatePlan();
 	}

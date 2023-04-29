@@ -149,7 +149,7 @@ public class PaladinusPlanner {
 		double totalMemory = r.totalMemory() / gb;	// current reserved memory (less than max)
 		double freeMemory = r.freeMemory() / gb;	// free memory that can be allocated (less than total)
 		double usedMemory = totalMemory - freeMemory;	// current memory been used (from totalMemory)
- 
+
         System.out.println("==============================");
         System.out.println("MEMORY REPORTING  (all in GB)");
         System.out.println("==============================");
@@ -245,7 +245,7 @@ public class PaladinusPlanner {
 			Global.options.setDefaults();
 			Global.options.parseArgs();	// SS: added args as otherwise it will be null!
 			if (Global.options.getDomainFilename() != null && Global.options.getInstanceFilename() != null) {
-				
+
 				executeTranslator();
 			}
 			Global.options.checkOptions();
@@ -379,7 +379,7 @@ public class PaladinusPlanner {
 					System.out.println("Algorithm: Iterative Depth-First Search Learning for FOND Planning");
 					if(heuristic != null)
 						search = new IterativeDepthFirstSearchLearning(problem, heuristic, Global.options.actionSelectionCriterion, Global.options.evaluationFunctionCriterion);
-					break;					
+					break;
 
 				default:
 					new Exception("Unknown Search Algorithm.").printStackTrace();

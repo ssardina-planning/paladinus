@@ -113,7 +113,7 @@ public class IterativeDepthFirstSearchPruning extends DepthFirstSearch {
 			this.updateMem();	// probe memory consumption
 		}
 
-	
+
 
 		if(RECURSION_COUNTER >= Integer.MAX_VALUE)
 			return new Pair<SearchFlag, Set<SearchNode>>(SearchFlag.DEAD_END, closedSolved);

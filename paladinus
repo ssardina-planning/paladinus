@@ -1,7 +1,10 @@
 #!/bin/bash
 
-DIR=$(realpath "$0")
-JAR=$DIR/target/paladinus-1.1-jar-with-dependencies.jar
+REALPATH=$(realpath "$0")
+BASEDIR="$(dirname "$REALPATH")"
+
+JAR=$BASEDIR/target/paladinus-1.1-jar-with-dependencies.jar
+TRANSLATOR=$BASEDIR/translator-fond/translate.py
 
 #  restrict the max heap size that can be used by the JVM
 MAX_HEAP=""
@@ -13,4 +16,4 @@ MAX_HEAP=-Xmx3g
 JCMD="-XX:NativeMemoryTracking=summary"
 JCMD=""
 
-java $MAX_HEAP $JCMD -jar $JAR -translatorPath $DIR/translator-fond/translate.py "$@"
+java $MAX_HEAP $JCMD -jar $JAR -translatorPath $TRANSLATOR "$@"
